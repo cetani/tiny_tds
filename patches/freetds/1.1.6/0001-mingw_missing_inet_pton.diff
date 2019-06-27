@@ -1,11 +1,11 @@
 diff --git a/src/tds/tls.c b/src/tds/tls.c
-index 09e7fa0..1da18f6 100644
+index c54784f..f3994a4 100644
 --- a/src/tds/tls.c
 +++ b/src/tds/tls.c
-@@ -101,6 +101,29 @@
- #define SSL_PTR BIO_get_data(bio)
+@@ -107,6 +107,28 @@
+ #if !HAVE_ASN1_STRING_GET0_DATA
+ #define ASN1_STRING_get0_data(x) ASN1_STRING_data(x)
  #endif
-
 +/*
 + * Add a workaround for older Mingw versions without inet_pton().
 + * This means RubyInstallers DevKit-4.7.2 in particular.
@@ -28,7 +28,6 @@ index 09e7fa0..1da18f6 100644
 +    return (_inet_pton)(Family, pStringBuf, pAddr);
 +  }
 +#endif
-+
+ 
  static SSL_RET
  tds_pull_func_login(SSL_PULL_ARGS)
- {

@@ -14,7 +14,7 @@ diff --git a/configure b/configure
 index 9495a49..31eb01d 100644
 --- a/configure
 +++ b/configure
-@@ -15915,8 +15915,6 @@ case $host in
+@@ -15934,8 +15934,6 @@ case $host in
  	tds_mingw=yes
  	if test "$host_cpu" = "x86_64"; then
  		LIBS="-lws2_32"

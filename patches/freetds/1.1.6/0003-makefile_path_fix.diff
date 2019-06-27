@@ -1,0 +1,52 @@
+diff --git a/Makefile.am b/Makefile.am
+index e68341e..9e279ea 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -11,7 +11,7 @@
+ 		config.rpath CMakeLists.txt Thanks-1.0
+ 
+ 
+-ETC	=	$(DESTDIR)$(sysconfdir)
++ETC	=	$(DESTDIR)$(top_srcdir)
+ DOCDIR	=	doc
+ 
+ install-data-local:
+diff --git a/Makefile.in b/Makefile.in
+index bbd1dec..98ad784 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -394,7 +394,7 @@
+ 		autogen.sh freetds.spec.in freetds.spec tds.dox \
+ 		config.rpath CMakeLists.txt Thanks-1.0
+ 
+-ETC = $(DESTDIR)$(sysconfdir)
++ETC = $(DESTDIR)$(top_srcdir)
+ DOCDIR = doc
+ 
+ # enable some cheat so make distcheck work (see below)
+diff --git a/src/pool/Makefile.am b/src/pool/Makefile.am
+index 0f3a7d5..76b4846 100644
+--- a/src/pool/Makefile.am
++++ b/src/pool/Makefile.am
+@@ -6,7 +6,7 @@
+ LDADD		=	../server/libtdssrv.la $(LTLIBICONV)
+ EXTRA_DIST	=	BUGS pool.conf CMakeLists.txt
+ 
+-ETC	=	$(DESTDIR)$(sysconfdir)
++ETC	=	$(DESTDIR)$(top_srcdir)
+ 
+ install-data-local:
+ 	$(mkinstalldirs) $(ETC)
+diff --git a/src/pool/Makefile.in b/src/pool/Makefile.in
+index a8f7a36..8259333 100644
+--- a/src/pool/Makefile.in
++++ b/src/pool/Makefile.in
+@@ -364,7 +364,7 @@
+ SERVERDIR = ../server
+ LDADD = ../server/libtdssrv.la $(LTLIBICONV)
+ EXTRA_DIST = BUGS pool.conf CMakeLists.txt
+-ETC = $(DESTDIR)$(sysconfdir)
++ETC = $(DESTDIR)$(top_srcdir)
+ all: all-am
+ 
+ .SUFFIXES:
